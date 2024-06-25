@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -25,6 +26,8 @@ public class Paciente {
 
     @NotNull
     @Column
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern ="yyyy-MM-dd")
     private Date nascimento;
     @Column
     private String planoDeSaude;
